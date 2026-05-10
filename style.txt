@@ -1,0 +1,31 @@
+/* by 2024/7/30 */
+
+H1 {
+    color: #ffffff;
+    background-color: #025942;
+    /* margin: 10px; */
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight:bold;
+}
+
+H2 {
+    color: #ffffff;
+    background-color: #00775C;
+    /* margin: 10px; */
+    padding-left: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-weight:normal;
+}
+
+H3 {
+    color: #ffffff;
+    background-color: #009671;
+    /* margin: 10px; */
+    padding-left: 30px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-weight:normal;
+}

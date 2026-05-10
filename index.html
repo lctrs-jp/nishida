@@ -1,5 +1,992 @@
-<html>
-  <body>
-    Under preparation
-  </body>
-</html>
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=UTF-8">
+<TITLE>NISHIDA Naoki</TITLE>
+
+<STYLE type="text/css">
+ /* === ラジオボタンは非表示 ================== */
+#langSelect input[type="radio"]{
+  display    : none;
+}
+ 
+ /* === 各ラジオボタンのラベルをボタンに変更 == */
+#langSelect label{
+  display    : inline-block;
+  border     : 1px solid #ccc;
+  box-shadow : 2px 2px #999;
+  padding    : 2px 6px;
+}
+ 
+ /* === 選択されている言語のラベル色を変更 ==== */
+#langSelect input[type="radio"]:checked + label {
+  background : #ffa64d;
+}
+
+H1 {
+  border-top: solid 3px #3cb371;
+  border-bottom: solid 3px #3cb371;
+  position: relative;
+  background: #f4f4f4;/*背景色*/
+}
+
+H1:after {
+  position: absolute;
+  content: " ";
+  display: block;
+  border-bottom: solid 3px #025942; 
+  bottom: -3px;
+  width: 20%;
+}
+
+H1:before {
+  position: absolute;
+  content: " ";
+  display: block;
+  border-top: solid 3px #025942; 
+  top: -3px;
+  width: 20%;
+}
+
+H2 {
+  padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: #f4f4f4;/*背景色*/
+  border-left: solid 5px #00775C;/*左線*/
+  border-bottom: solid 3px #d7d7d7;/*下線*/
+}
+
+H3 {
+  padding: 0.25em 0.5em;/*上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: transparent;/*背景透明に*/
+  border-left: solid 3px #009671;/*左線*/
+}
+
+A {
+  transition: color 0.5s;
+  text-decoration: none;
+}
+
+A:HOVER {
+   color: #ff7043;
+}
+
+A:ACTIVE {
+  color : #26a69a;
+}
+
+</STYLE>
+<SCRIPT>
+ // =========================================================
+ //      画面が開かれたときの初期設定
+ // =========================================================
+window.onload = function() {
+ 
+  // --- ブラウザのデフォルト言語を取得して初回の表示 ----- 
+  var wDef = (navigator.browserLanguage || navigator.language || navigator.userLanguage).substr(0,2);
+  if( wDef == "ja" ) {
+    langSet("ja");
+  } else {
+    langSet("en");
+  }
+}
+
+ // =========================================================
+ //      選択された言語のみ表示
+ // =========================================================
+function langSet(argLang){
+ 
+  if(argLang == "ja") {
+    var elm = document.getElementsByClassName("ja");
+    for (var i = 0; i < elm.length; i++) {
+      elm[i].style.display = '';
+    }
+    var elm = document.getElementsByClassName("en");
+    for (var i = 0; i < elm.length; i++) {
+      elm[i].style.display = 'none';
+    }
+  }
+  if(argLang == "en") {
+    var elm = document.getElementsByClassName("ja");
+    for (var i = 0; i < elm.length; i++) {
+      elm[i].style.display = 'none';
+    }
+    var elm = document.getElementsByClassName("en");
+    for (var i = 0; i < elm.length; i++) {
+      elm[i].style.display = '';
+    }
+  }
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+
+<div id="langSelect">
+<p style="text-align : right">
+<SCRIPT>
+  var modified = new Date(document.lastModified);
+  var year = modified.getFullYear();
+  var month= modified.getMonth() + 1;
+  var date = modified.getDate();
+  document.write("<font class='ja'>" + "最終更新：" + year + "年" + month + "月" + date + "日" + "</font>");
+  document.write("<font class='en'>" + "Last Update: " + year + "/" + month + "/" + date + "</font>");
+</SCRIPT>
+  &nbsp;
+
+  <input type="radio" name="mylang" id="setJa" onClick="langSet('ja')" checked>
+  <label for="setJa">
+    <span class="ja">日本語</span>
+    <span class="en">Japanese</span>
+  </label>
+ 
+  <input type="radio" name="mylang" id="setEn" onClick="langSet('en')">
+  <label for="setEn">
+    <span class="ja">English</span>
+    <span class="en">English</span>
+  </label>
+</p>  
+</div>
+
+<H1 class="ja">西田 直樹（NISHIDA Naoki）</H1>
+<H1 class="en">Naoki Nishida（西田 直樹）</H1>
+
+<IMG SRC="./selfsnaps/nishida_2024.jpg" HEIGHT="120" VSPACE="5" HSPACE="25" ALT="N.Nishida">
+
+<H4 class="ja">
+<a href="https://www.nagoya-u.ac.jp"><font color="black">名古屋大学</font></a>
+<a href="https://www.i.nagoya-u.ac.jp"><font color="black">大学院情報学研究科</font></a>
+<a href="https://www.i.nagoya-u.ac.jp/gs/css/"><font color="black">情報システム学専攻</font></a>
+<a href="https://www.trs.css.i.nagoya-u.ac.jp"><font color="black">計算論講座</font></a>
+教授</H4>
+<H4 class="en">Professor,
+<a href="https://www.i.nagoya-u.ac.jp/en/gs/css/"><font color="black">Department of Computing and Software Systems</font></a>,
+<a href="https://www.i.nagoya-u.ac.jp/en/"><font color="black">Graduate School of Informatics</font></a>,
+<a href="https://en.nagoya-u.ac.jp"><font color="black">Nagoya University</font></a></H4>
+
+<H4 class="ja">博士（工学）</H4>
+<H4 class="en">Doctor of Engineering</H4>
+
+<DL>
+<DT class="ja">所在地</DT>
+<DT class="en">Postal Address</DT>
+<DD class="ja">〒464-8601 名古屋市千種区不老町</DD>
+<DD class="en">Furo-cho, Chikusa-ku, Nagoya 4648601, Japan</DD>
+
+<DT class="ja">居室</DT>
+<DT class="en">Office</DT>
+<DD class="ja">IB電子情報館南棟5階 589</DD>
+<DD class="en">Room 589, IB south building</DD>
+
+<DT>Tel</DT>
+<DD class="ja">052-789-5141 <small><font color="red">業務に関係しない電話，お断り！！</font></small></DD>
+<DD class="en">+81-52-789-5141</DD>
+
+<DT class="ja">Eメールアドレス</DT>
+<DT class="en">E-mail</DT>
+<DD>nishida [at] i.nagoya-u.ac.jp</DD>
+<DD>naoki.nishida [at] nagoya-u.jp</DD>
+<DD>nishida.naoki.g5 [at] f.mail.nagoya-u.ac.jp</DD>
+<DD>
+<br>
+<UL>
+<LI class="ja">上記1つ目，2つ目のメールアドレスは上記3つ目のアドレスに転送されています．</LI>
+<LI class="en">The first and second email addresses above have been forwarded to the third address above.</LI>
+<LI class="ja"><FONT COLOR="red">2024年4月以降，私に送信されたメール，私が送信したメールが届かない事例が発生しています．</FONT></LI>
+<LI class="en"><FONT COLOR="red">Since April 2024, there have been cases where emails sent to/by me have not been delivered.</FONT></LI>
+<LI class="ja">返信がない場合などはお手数ですが，上記の3つ目のアドレスに直接，メールをお送りください．</LI>
+<LI class="en">If you do not receive a reply, please send an email directly to the third address above.</LI>
+</UL>
+<br>
+</DD>
+
+<DT class="ja">ホームページ（個人）</DT>
+<DT class="en">Homepage (Personal)</DT>
+<DD><A HREF="http://www.lctrs.jp/nishida/">http://www.lctrs.jp/nishida/</A></DD>
+
+<DT class="ja">以前のホームページ（個人）</DT>
+<DT class="en">Previous Homepage (Personal)</DT>
+<DD><A HREF="http://www.trs.css.i.nagoya-u.ac.jp/~nishida/">http://www.trs.css.i.nagoya-u.ac.jp/~nishida/</A></DD>
+
+<DT class="ja">研究者総覧</DT>
+<DT class="en">Nagoya University Profiles of Researchers</DT>
+<DD class="ja"><A HREF="https://profs.provost.nagoya-u.ac.jp/html/100002731_ja.html">https://profs.provost.nagoya-u.ac.jp/html/100002731_ja.html</A></DD>
+<DD class="en"><A HREF="https://profs.provost.nagoya-u.ac.jp/html/100002731_en.html">https://profs.provost.nagoya-u.ac.jp/html/100002731_en.html</A></DD>
+
+</DL>
+
+
+<H2 class="ja">ニュース</H2>
+<H2 class="en">News</H2>
+
+<dl>
+  <dt class="ja">2024/09/01</dt>
+  <dd class="ja">2022年の発表実績を追加</dd>
+  <dt class="en">September 1st, 2024</dt>
+  <dd class="en">Added publications in 2022.</dd>
+  <dt class="ja">2023/10/08</dt>
+  <dd class="ja">本ページをリニューアル</dd>
+  <dt class="en">October 8th, 2023</dt>
+  <dd class="en">Renewed this page.</dd>
+</dl>
+
+
+<H2 class="ja">研究内容</H2>
+<H2 class="en">Research Topics</H2>
+
+<ul>
+  <li class="ja">プログラム逆化</li>
+  <li class="en">Program inversion</li>
+
+  <li class="ja">プログラム変換</li>
+  <li class="en">Program transformation</li>
+
+  <li class="ja">項書換え</li>
+  <li class="en">Term rewriting</li>
+  <ul>
+    <li class="ja">制約付き書換え</li>
+    <li class="en">Constrained rewriting</li>
+
+    <li class="ja">条件付き書換え</li>
+    <li class="en">Conditional rewriting</li>
+
+    <li class="ja">ナローイング</li>
+    <li class="en">Narrowing</li>
+  </ul>
+
+  <li class="ja">プログラム検証</li>
+  <li class="en">Program verification</li>
+
+<!--
+  <li class="ja"></li>
+  <li class="en"></li>
+-->
+
+</ul>
+
+<H2 class="ja">発表論文</H2>
+<H2 class="en">Publications</H2>
+
+<ul>
+  <li class="ja"><a href="https://profs.provost.nagoya-u.ac.jp/html/100002731_ja.html">研究者総覧（名古屋大学）</a></li>
+  <li class="en"><a href="https://profs.provost.nagoya-u.ac.jp/html/100002731_en.html">Researchers (Nagoya Univ.)</a></li>
+  <li><a href="https://dblp.org/pid/77/1253-1.html">DBLP (Naoki Nishida 0001)</a></li>
+</ul>
+
+<H3 class="ja">学位論文</H3>
+<H3 class="en">Theses</H3>
+
+<ol>
+
+  <li class="ja">
+  Naoki Nishida,<br>
+  <a href="https://www.trs.css.i.nagoya-u.ac.jp/~nishida/DB/pdf/nishida04phdthesis.pdf">Transformational Approach to Inverse Computation in Term Rewriting</a>,<br>
+  博士論文，名古屋大学・大学院工学研究科，2004年1月．
+  </li>
+  <li class="en">
+  Naoki Nishida,<br>
+  <a href="https://www.trs.css.i.nagoya-u.ac.jp/~nishida/DB/pdf/nishida04phdthesis.pdf">Transformational Approach to Inverse Computation in Term Rewriting</a>,<br>
+  PhD thesis, Graduate School of Engineering, Nagoya University, January 2024.
+  </li>
+
+</ol>
+
+<H3 class="ja">ジャーナル（2022年度〜）</H3>
+<H3 class="en">Journals (2022 - )</H3>
+
+<ol>
+
+  <li>
+  Naoki Nishida, Misaki Kojima, and Takumi Kato,<br>
+  <a href="https://doi.org/10.1016/j.jlamp.2025.101056">Transforming imperative programs into bisimilar logically constrained term rewrite systems via injective functions from configurations to terms</a>,<br>
+  <i>Journal of Logical and Algebraic Methods in Programming</i>,
+  Vol. 145, 18 pages, May 2025.
+  </li>
+  <br>
+  <li>
+  Naoki Nishida, Misaki Kojima, and Ayuka Matsumi,<br>
+  <a href="https://doi.org/10.1016/j.jlamp.2025.101045">A nesting-preserving transformation of SIMP programs into logically constrained term rewrite systems</a>,<br>
+  <i>Journal of Logical and Algebraic Methods in Programming</i>,
+  Vol. 144, 15 pages, March 2025.
+  </li>
+  <br>
+  <li>
+  Misaki Kojima, Naoki Nishida, and Yutaka Matsubara,<br>
+  <a href="https://doi.org/10.1016/j.jlamp.2024.101033">Transforming concurrent programs with semaphores into logically constrained term rewrite systems</a>,<br>
+  <i>Journal of Logical and Algebraic Methods in Programming</i>,
+  Vol. 143, 23 pages, February 2025.
+  </li>
+  <br>
+  <li>
+  Misaki Kojima and Naoki Nishida,<br>
+  <a href="https://doi.org/10.2197/ipsjjip.32.417">A Sufficient Condition of Logically Constrained Term Rewrite Systems for Decidability of All-path Reachability Problems with Constant Destinations</a>,<br>
+  <i>Journal of Information Processing</i>,
+  Vol. 32, pp. 417-435, May 2024.
+  <ul>
+    <li>Lemma 5.1 implicitly assumes that constrained terms &lang;<var>s</var> &verbar; <var>&phi;</var>&rang;, &lang;<var>t</var> &verbar; <var>&psi;</var>&rang; are linear.
+    Generalization to arbitrary constrained terms is straightforward: 
+    as a preprocess, for each constrained term, we first linearize logical variables and append equality constraints to the constrained part.
+    </li>
+    <li>Constraints <var>&phi;</var> and <var>&psi;</var> are <i>equivalent</i> if <var>Var</var>(<var>&phi;</var>)=<var>Var</var>(<var>&psi;</var>) and <var>&phi;</var> &harr; <var>&psi;</var> is valid (w.r.t. the considered structure).</li>
+  </ul>
+  </li>
+  <br>
+  <li>
+  Misaki Kojima and Naoki Nishida,<br>
+  <a href="https://doi.org/10.1016/j.jlamp.2023.100903">Reducing Non-Occurrence of Specified Runtime Errors to All-Path Reachability Problems of Constrained Rewriting</a>,<br>
+  <i>Journal of Logical and Algebraic Methods in Programming</i>,
+  Vol. 135, 19 pages, October 2023.
+  </li>
+  <br>
+    <li>
+    Shujun Zhang and Naoki Nishida,<br>
+    <a href="http://dx.doi.org/10.1016/j.jlamp.2022.100779">Transforming orthogonal inductive definition sets into confluent term
+      rewrite systems</a>,<br>
+     <i>Journal of Logical and Algebraic Methods in Programming</i>,
+     Vol. 127, pp. 1-17, May 2022.
+     <!-- Selected papers from the 8th Workshops on Rewriting Techniques for
+      Program Transformations and Evaluation.-->
+    </li>
+<!--  <br> -->
+
+</ol>
+
+<H3 class="ja">国際会議・ワークショップ（2022年度〜）</H3>
+<H3 class="en">International Conferences and Workshops (2022 -)</H3>
+
+<ol>
+
+  <li>
+  Naoki Nishida, Misaki Kojima, and Yuto Nakamura,<br>
+  <a href="https://doi.org/10.1007/978-3-032-04167-8_14">Difference of Constrained Patterns in Logically Constrained Term Rewrite Systems</a>,<br>
+  <i>Proceedings of the 15th International Symposium on Frontiers of Combining Systems</i> (FroCoS 2025), 
+  <i>Lecture Notes in Computer Science</i>, Vol. 15979, pp. 247–266, Springer, Cham, 
+  Reykjavik, Iceland, September 2025.<br>
+  [<a href="http://arxiv.org/abs/2507.04080">full version</a> with complete proofs]
+  [<a href="https://youtu.be/6Nk_Vlsq8m8&list=PL0oY24ee23IOtVBPeoF65QadiK12ET8s3">Recording</a>]
+  </li>
+  <br>
+  <li>
+  Kanta Takahata, Jonas Sch&ouml;pf, Naoki Nishida, and Takahito Aoto,<br>
+  <a href="https://doi.org/10.1145/3756907.3756916">Recovering Commutation of Logically Constrained Rewriting and Equivalence Transformations</a>,<br>
+  <i>Proceedings of the 27th International Symposium on Principles and Practice of Declarative Programming</i> (PPDP 2025), 
+  Articile No. 9, pp. 1-13,
+  ACM, Rende, Italy, September 2025.<br>
+  [<a href="https://doi.org/10.48550/arXiv.2507.09326">full version</a> with complete proofs]
+  </li>
+  <br>
+  <li>
+  Kanta Takahata, Jonas Sch&ouml;pf, Naoki Nishida, and Takahito Aoto,<br>
+  <a href="https://doi.org/10.1007/978-3-032-04848-6_12">Characterizing Equivalence of Logically Constrained Terms via Existentially Constrained Terms</a>,<br>
+  <i>Proceedings of the 35th International Symposium on Logic-Based Program Synthesis and Transformation</i> (LOPSTR 2025), 
+  <i>Lecture Notes in Computer Science</i>, Vol. 16117, pp. 180–195, Springer, Cham, 
+  Rende, Italy, September 2025.<br>
+  [<a href="https://doi.org/10.48550/arXiv.2505.21986">full version</a> with complete proofs]
+  </li>
+  <br>
+  <li>
+  Naoki Nishida and Ra&uacute;l Guti&eacute;rrez:,<br>
+  <a href="http://cl-informatik.uibk.ac.at/iwc/iwc2025.pdf">Proceedings of the 14th International Workshop on Confluence</a>,<br>
+  IWC 2025, Leipzig, Germany, September 2025. 
+  </li>
+  <br>
+  <li>
+  Misaki Kojima and Naoki Nishida,<br>
+  <a href="https://wpte2025.github.io/pre-proceedings.pdf#page=41">On Transforming Prioritized Multithreaded Programs into Logically Constrained Term Rewrite Systems</a>,<br>
+  <i>Informal Proceedings of the 11th International Workshop on Rewriting Techniques for Program Transformations and Evaluation</i> (WPTE 2025), pp. 39-51, Birmingham, UK, July 2025.
+  </li>
+  <br>
+  <li>
+  Naoki Nishida and Nozomi Taira,<br>
+  <a href="https://wpte2025.github.io/pre-proceedings.pdf#page=87">On Merging Constrained Rewrite Rules of Induction Hypotheses in Constrained Rewriting Induction</a>,<br>
+  <i>Informal Proceedings of the 11th International Workshop on Rewriting Techniques for Program Transformations and Evaluation</i> (WPTE 2025), pp. 85-96, Birmingham, UK, July 2025.
+  </li>
+  <br>
+  <li>
+  Misaki Kojima and Naoki Nishida,<br>
+  <a href="https://doi.org/10.1007/978-3-031-72621-7_5">On Solving All-Path Reachability Problems for Starvation Freedom of Concurrent Rewrite Systems Under Process Fairness</a>,<br>
+  <i>Proceedings of the 18th International Conference on Reachability Problems</i> (RP 2024),<br>
+  <i>Lecture Notes in Computer Science</i>, Vol. 15050, pp. 54-70, Springer Cham, September 2024.
+  </li>
+  <br>
+  <li>
+  Takahito Aoto, Naoki Nishida, and Jonas Sch&ouml;pf,<br>
+  <a href="https://doi.org/10.4230/LIPIcs.FSCD.2024.31">Equational Theories and Validity for Logically Constrained Term Rewriting</a>,<br>
+  <i>Proceedings of the 9th International Conference on Formal Structures for Computation and Deduction</i> (FSCD 2024),<br>
+  <i>LIPIcs</i>, Vol. 299, pp. 31:1-31:21, Tallinn, Estonia, July 2024.
+  </li>
+  <br>
+  <li>
+  Cyrille Chenavier and Naoki Nishida,<br>
+  <a href="http://cl-informatik.uibk.ac.at/iwc/iwc2024.pdf">Proceedings of the 13th International Workshop on Confluence</a>,<br>
+  IWC 2024, Tallinn, Estonia, July 2024. 
+  </li>
+  <br>
+  <li>
+  Misaki Kojima and Naoki Nishida,<br>
+  <a href="http://cl-informatik.uibk.ac.at/iwc/iwc2024.pdf#page=7">On Proving Confluence of Concurrent Programs by All-Path Reachability of LCTRSs</a>,<br>
+  <i>Proceedings of the 13th International Workshop on Confluence</i> (IWC 2024), pp. 2-8, Tallinn, Estonia, July 2024. 
+  </li>
+  <br>
+  <li>
+  Ayuka Matsumi, Naoki Nishida, Misaki Kojima, and Donghoon Shin,<br>
+  <a href="https://doi.org/10.48550/arXiv.2307.14094">On Singleton Self-Loop Removal for Termination of LCTRSs with Bit-Vector Arithmetic</a>,<br>
+  <i>Proceedings of the 19th International Workshop on Termination</i> (WST 2023), 6 pages, Obergurgl, Austria, August 2023.
+  </li>
+  <br>
+  <li>
+  Takahito Aoto, Nao Hirokawa, Dohan Kim, Misaki Kojima, Aart Middeldorp, Fabian Mitterwallner, Naoki Nishida, Teppei Saito, Jonas Sch&ouml;pf, Kiraku Shintani, Ren&eacute; Thiemann and Akihisa Yamada,<br>
+  <a href="http://cl-informatik.uibk.ac.at/iwc/iwc2023.pdf#page=37">A New Format for Rewrite Systems</a>,<br>
+  <i>Proceedings of the 12th International Workshop on Confluence</i> (IWC 2023), pp. 32-37, Obergurgl, Austria, August 2023.
+  </li>
+  <br>
+  <li>
+  Naoki Nishida, Misaki Kojima, and Ayuka Matsumi,<br>
+  <a href="https://wpte2023.github.io/paper1.pdf">A Nesting-Preserving Transformation of SIMP Programs into Logically Constrained Term Rewrite Systems</a>,<br>
+  <i>Informal Proceedings of the 10th International Workshop on Rewriting Techniques for Program Transformations and Evaluation</i> (WPTE 2023), 11 pages, Rome, Italy, July 2023.
+  </li>
+  <br>
+  <li>
+  Misaki Kojima and Naoki Nishida,<br>
+  <a href="https://wpte2023.github.io/paper4.pdf">On Representations of Waiting Queues for Semaphores in Logically Constrained Term Rewrite Systems</a>,<br>
+  <i>Informal Proceedings of the 10th International Workshop on Rewriting Techniques for Program Transformations and Evaluation</i> (WPTE 2023), 6 pages, Rome, Italy, July 2023.
+  </li>
+  <br>
+  <li>
+  Misaki Kojima and Naoki Nishida,<br>
+  <a href="https://doi.org/10.1007/978-3-031-24841-2_11">From Starvation Freedom to All-Path Reachability Problems in Constrained Rewriting</a>,<br>
+  <i>Proceedings of the 25th International Symposium on Practical Aspects of Declarative Languages</i> (PADL 2023),<br>
+  <i>Lecture Notes in Computer Science</i>, Vol. 13880, pp. 161-179, Springer, Cham, Boston, USA, January 2023.
+  </li>
+  <br>
+  <li>
+    Naoki Nishida and Misaki Kojima,<br>
+    <a href="http://cl-informatik.uibk.ac.at/iwc/iwc2022.pdf#page=67">CO3 (Version 2.3)</a>,<br>
+      <i>Proceedings of the 11th International Workshop on
+      Confluence</i> (IWC 2022), page 63, August 2022.
+  </li>
+  <br>
+  <li>
+    Ra&uacute;l Guti&eacute;rrez, Aart Middeldorp, Naoki Nishida, and Kiraku Shintani,<br>
+    <a href="http://cl-informatik.uibk.ac.at/iwc/iwc2022.pdf#page=58">Confluence Competition 2022</a>,<br>
+      <i>Proceedings of the 11th International Workshop on Confluence</i> (IWC 2022), page 54, August 2022.
+    </li>
+    <br>  
+  <li>
+    Shujun Zhang and Naoki Nishida,<br>
+    <a href="https://easychair.org/publications/preprint/2bcp">On Transforming Rewriting-Induction Proofs for
+      Logical-Connective-Free Sequents into Cyclic Proofs</a>,<br>
+      <i>Informal Proceedings of the 9th International Workshop on Rewriting Techniques for Program Transformations and Evaluation</i> (WPTE 2022),
+      14 pages, July 2022.
+      </li>
+      <br>
+   <li>
+    Misaki Kojima and Naoki Nishida,<br>
+    <a href="https://easychair.org/publications/preprint/TM7q">On Reducing Non-Occurrence of Specified Runtime Errors to All-Path Reachability Problems of Constrained Rewriting</a>,<br>
+     <i>Informal Proceedings of the 9th International Workshop on Rewriting Techniques for Program Transformations and Evaluation</i> (WPTE 2022), 
+     16 pages, July 2022.
+    </li>
+    <br>
+    <li>
+    Naoki Nishida, Misaki Kojima, and Takumi Kato,<br>
+    <a href="https://easychair.org/publications/preprint/DbM2">On Transforming Imperative Programs into Logically Constrained Term
+      Rewrite Systems via Injective Functions from Configurations to Terms</a>,<br>
+     <i>Informal Proceedings of the 9th International Workshop on Rewriting Techniques for Program Transformations and Evaluation</i> (WPTE 2022), 
+     16 pages, July 2022.
+    </li>
+    <br>
+    <li>
+    Shujun Zhang and Naoki Nishida,<br>
+    <a href="http://dx.doi.org/10.1007/978-3-030-99461-7_15">On Transforming Cut- and Quantifier-Free Cyclic Proofs into
+      Rewriting-Induction Proofs</a>,<br>
+      <i>Proceedings of the 16th International Symposium on Functional and Logic Programming</i> (FLOPS 2022), 
+      <i>Lecture Notes in Computer Science</i>, Vol. 13215, pp. 262-281, Springer, May 2022.
+    </li>
+
+<!--  <br> -->
+
+</ol>
+
+<H3 class="ja">国内会議・研究会（2022年度〜）</H3>
+<H3 class="en">Domestic Events (2022 -)</H3>
+
+<ol>
+
+  <li class="ja">
+  高畑 幹汰，Jonas Sch&ouml;pf，西田 直樹，青戸 等人，<br>
+  論理制約付き項書き換えシステムにおける制約付き最汎書き換え，<br>
+  第27回プログラミングおよびプログラミング言語ワークショップ（PPL 2025），
+  2025年3月．
+  </li>
+  <li class="en">
+  Kanta Takahata, Jonas Sch&ouml;pf, Naoki Nishida, and Takahito Aoto,<br>
+  Most General Constrained Rewriting of Logically Constrained Term Rewriting Systems,<br>
+  the 27th Workshop on Programming and Programming Languages (PPL 2025),
+  March 2025.
+  </li>
+    <br>
+  <li class="ja">
+  平等 望，西田 直樹，酒井 正彦，<br>
+  制約付き書換え帰納法による証明における選言型制約を持つ等式の分割の完全性について，<br>
+  令和6年度電気・電子・情報関係学会東海支部連合大会講演論文集，
+  No. H6-4，1ページ，2024年8月．
+  </li>
+  <li class="en">
+  Nozomi Taira, Naoki Nishida, and Masahiko Sakai,<br>
+  On completeness of decomposion of equations with disjunctive constraints on provability of constrained rewriting induction,<br>
+  <i>Record of 2024 Tokai-Section Joint Conference on Electrical, Electronics, Information, and Related Engineering</i>,
+  No. H6-4, 1 page, August 2024.
+  </li>
+  <br>
+  <li class="ja">
+  Misaki Kojima and Naoki Nishida,<br>
+  A Sufficient Condition of Logically Constrained Term Rewrite Systems for Decidability of All-Path Reachability Problems with Constant Destinations,<br>
+  情報処理学会・第146回プログラミング研究発表会，
+  発表資料 2023-3-(1)，17ページ，2023年10月．
+  </li>
+  <li class="en">
+  Misaki Kojima and Naoki Nishida,<br>
+  A Sufficient Condition of Logically Constrained Term Rewrite Systems for Decidability of All-Path Reachability Problems with Constant Destinations,<br>
+  <i>Presentation at the 146th Meeting on IPSJ Special Interest Group on Programming</i>,
+  No. 2023-3-(1), 17 pages, October 2023.
+  </li>
+  <br>
+  <li class="ja">
+  松見 歩佳，西田 直樹，小嶋 美咲，申東訓，<br>
+  <a href="https://ken.ieice.org/ken/paper/20230315dCRu/">ビットベクトル制約付き項書換え系の停止性証明のための多項式解釈プロセッサについて</a>，<br>
+  電子情報通信学会技術報告 SS2022-61，Vol.122，No.432，pp.85-90，2023年3月．
+  </li>
+  <li class="en">
+  Ayuka Matsumi, Naoki Nishida, Misaki Kojima, and Donghoon Shin,<br>
+  <a href="https://ken.ieice.org/ken/paper/20230315dCRu/eng/">On Polynomial Interpretations Toward Termination of Logically Constrained Term Rewrite Systems with Bit Vector Arithmetic</a>,<br>
+  IEICE Technical Report SS2022-61, Vol.122, No.432, pp.85-90, March 2023 (in Japanese).
+  </li>
+  <br>
+  <li class="ja">
+    熊谷 妃美香，西田 直樹，<br>
+    プログラム逆化のための文脈自由表現の等価関係に基づく項書換え系決定化手法の実装，<br>
+    情報処理学会第83回全国大会講演論文集，
+    No. 1L-05, pp. 271-272, 2022年3月．
+    </li>
+    <li class="en">
+    Himika Kumagai and Naoki Nishida,<br>
+    Implementing Determinization of Term Rewrite Systems via Equivalence
+      of Context-Free Expressions toward Program Inversion,<br>
+     <i>Record of the 84th National Convention of IPSJ</i>, 
+     No. 1L-05, pp. 271-272, March 2022 (in Japanese).
+     </li>
+     <br>
+    <li class="ja">
+    加藤 拓洋，西田 直樹，酒井 正彦，<br>
+    <a href="https://ken.ieice.org/ken/paper/20220112KChm/">LLVM中間表現の意味論規則を表現する制約付き書換え規則について</a>，<br>
+   信学技法 SS2021-34， Vol. 121, No. 318, pp. 89-94，電子情報通信学会，2022年1月．
+</li>
+    <li class="en">
+    Takumi Kato, Naoki Nishida, and Masahiko Sakai,<br>
+    <a href="https://ken.ieice.org/ken/paper/20220112KChm/eng/"> On Constrained Rewrite Rules Representing Semantics Rules of LLVM IR</a>,<br>
+     IEICE Technical Report SS2021-34, Vol. 121, No. 318, pp. 89-94,
+     the Institute of Electronics, Information and Communication Engineers (IEICE), January 2022 in Japanese).
+    </li>
+
+    <!--  <br> -->
+</ol>
+
+<!--
+<H2 class="ja">口頭発表</H2>
+<H2 class="en">Presentations</H2>
+-->
+
+<H3 class="ja">招待講演</H3>
+<H3 class="en">Invited Talks</H3>
+
+<ol>
+  <li>
+  Naoki Nishida,<br>
+  <a href="http://cl-informatik.uibk.ac.at/iwc/iwc2023.pdf#page=6">Unravelings and Narrowing Trees Towards Confluence of Deterministic CTRSs</a>,<br>
+  <i>the 12th International Workshop on Confluence</i> (IWC 2023), Obergurgl, Austria, August 2023.
+  </li>
+</ol>
+
+<H3 class="ja">口頭発表（2022年度〜）</H3>
+<H3 class="en">Oral Presentations (2022 -)</H3>
+
+<ol>
+  <li>
+  Naoki Nishida,<br>
+  Difference of Constrained Terms in LCTRSs,<br>
+  the 62nd TRS meeting, Aichi, September 2025.
+  </li>
+  <br>
+  <li>
+  Naoki Nishida and Misaki Kojima,<br>
+  <a href="http://cl-informatik.uibk.ac.at/iwc/iwc2025.pdf#page=70">CO3 (Version 2.6)</a>,<br>
+  <i>Proceedings of the 14th International Workshop on Confluence</i> (IWC 2025), pp. 65-66, Leipzig, Germany, September 2025. 
+  </li>
+  <br>
+  <li>
+  Naoki Nishida and Misaki Kojima,<br>
+  <a href="http://cl-informatik.uibk.ac.at/iwc/iwc2025.pdf#page=72">CRaris (Version 1.1)</a>,<br>
+  <i>Proceedings of the 14th International Workshop on Confluence</i> (IWC 2025), pp. 67-68, Leipzig, Germany, Septebmer 2025. 
+  </li>
+  <br>
+  <li>
+    Ra&uacute;l Guti&eacute;rrez, Aart Middeldorp, Naoki Nishida, Teppei Saito, and Re&eacute; Thiemann,<br>
+    <a href="http://cl-informatik.uibk.ac.at/iwc/iwc2025.pdf#page=57">Confluence Competition 2025</a>,<br>
+      <i>Proceedings of the 14th International Workshop on Confluence</i> (IWC 2025), pp. 52-53, September 2025.
+    </li>
+    <br>  
+  <li>
+  Naoki Nishida,<br>
+  A Proof System for All-Path Reachability Problems of LCTRSs,<br>
+  a seminar at Radboud University Nijmegen, June 2025.
+  </li>
+  <br>
+  <li>
+  Naoki Nishida,<br>
+  All-Path Reachability for Starvation Freedom Under Process Fairness,<br>
+  the 60th TRS meeting, Tokyo, October 2024.
+  </li>
+  <br>
+  <li>
+    Ra&uacute;l Guti&eacute;rrez, Aart Middeldorp, Naoki Nishida, Teppei Saito, and Re&eacute; Thiemann,<br>
+    <a href="http://cl-informatik.uibk.ac.at/iwc/iwc2024.pdf#page=68">Confluence Competition 2024</a>,<br>
+      <i>Proceedings of the 13th International Workshop on Confluence</i> (IWC 2024), pp. 63-64, July 2024.
+    </li>
+    <br>  
+  <li>
+  Naoki Nishida and Misaki Kojima,<br>
+  <a href="http://cl-informatik.uibk.ac.at/iwc/iwc2024.pdf#page=76">CO3 (Version 2.5)</a>,<br>
+  <i>Proceedings of the 13th International Workshop on Confluence</i> (IWC 2024), pp. 71-72, Tallinn, Estonia, July 2024. 
+  </li>
+  <br>
+  <li>
+  Naoki Nishida and Misaki Kojima,<br>
+  <a href="http://cl-informatik.uibk.ac.at/iwc/iwc2024.pdf#page=88">CRaris: CR checker for LCTRSs in ARI Style</a>,<br>
+  <i>Proceedings of the 13th International Workshop on Confluence</i> (IWC 2024), pp. 83-84, Tallinn, Estonia, July 2024. 
+  </li>
+  <br>
+  <li>
+  Naoki Nishida,<br>
+  On Constrained Narrowing of Logically Constrained Term Rewrite Systems,<br>
+  the 59th TRS meeting, Izumo, September 2023.
+  </li>
+  <br>
+  <li>
+    Ra&uacute;l Guti&eacute;rrez, Aart Middeldorp, Naoki Nishida, and Kiraku Shintani,<br>
+    <a href="http://cl-informatik.uibk.ac.at/iwc/iwc2023.pdf#page=66">Confluence Competition 2023</a>,<br>
+      <i>Proceedings of the 12th International Workshop on Confluence</i> (IWC 2023), pp. 61-62, August 2023.
+    </li>
+    <br>  
+  <li>
+  Naoki Nishida, Misaki Kojima, Ayuka Matsumi,<br>
+  <a href="http://cl-informatik.uibk.ac.at/iwc/iwc2023.pdf#page=72">CO3 (Ver. 2.4)</a>,<br>
+  <i>Proceedings of the 12th International Workshop on Confluence</i> (IWC 2023), p. 67, Obergurgl, Austria, August 2023.
+  </li>
+  <br>
+  <li>
+    Naoki Nishida,<br>
+    On Transforming Imperative Programs into LCTRSs via Injective Functions from Configurations to Terms,<br>
+    Presentation at the 57th TRS Meeting, September 2022.
+  </li>
+  <br>
+  <li>
+    Naoki Nishida and Misaki Kojima,<br>
+    <a href="http://cl-informatik.uibk.ac.at/iwc/iwc2022.pdf#page=67">CO3 (Version 2.3)</a>,<br>
+      <i>Proceedings of the 11th International Workshop on
+      Confluence</i>, p. 63, August 2022.
+  </li>
+  <br>
+  <li>  
+    Naoki Nishida,<br>
+    Inversion and Determinization in Term Rewriting,<br>
+    Presentation at the meeting of IFIP Working Group 1.6: Rewriting, July 2022.
+   </li>
+   <br>
+   <li>
+    Naoki Nishida,<br>
+     On Semantically Equivalent Operations for Inversion of DCTRSs,<br>
+     Presentation at the 56th TRS Meeting, February 2022.
+    </li>
+<!--  <br> -->
+</ol>
+
+<!--
+<ol>
+  <li class="ja">
+  小嶋 美咲，西田 直樹，酒井 正彦．<br>
+  計数セマフォを含むプログラムから論理制約付き項書換え系への変換．<br>
+  情報処理学会第83回全国大会論文集，No.6J07，pp.229-230，2021年3月．</li>
+  <li class="en">
+  Misaki Kojima, Naoki Nishida, and Masahiko Sakai.<br>
+  Transforming Programs with Counting Semaphores into Logically Constrained Term Rewrite Systems.<br>
+  Record of the 83rd National Convention of IPSJ, No.6J07, pp.229-230, March 2021.
+  </li>
+  <br>
+  <li class="ja">
+  小嶋 美咲，西田 直樹，松原 豊，酒井 正彦．<br>
+  排他制御を含むプログラムから論理制約付き項書換え系への変換．<br>
+  電子情報通信学会技術報告 SS2019-46，Vol.119，No.451，pp.31-36，2020年3月．
+  </li>
+  <li class="en">
+  Misaki Kojima, Naoki Nishida, Yutaka Matsubara, and Masahiko Sakai.<br>
+  Transforming Programs with Exclusive Control into Logically Constrained Term Rewrite Systems.<br>
+  IEICE Technical Report SS2019-46, Vol.119, No.451, pp.31-36, March 2020 (in Japanese).
+  </li>
+
+</ol>
+
+-->
+
+<H2 class="ja">受賞</H2>
+<H2 class="en">Awards</H2>
+
+<ul>
+  <li class="ja">情報処理学会論文編集貢献賞（2020/05/12）</li>
+  <li class="ja">情報処理学会研究活動貢献励賞（2020/02/18）</li>
+  <li class="ja">平成24年度電子情報通信学会ソフトウェアサイエンス研究会 研究奨励賞（2013/05/09）
+  <dl class="ja">
+    <dt>講演題目・著者・発表研究会</dt>
+    <dd>Malbolge低級アセンブリプログラミングにおける制御命令の配置設計のためのSATソルバの利用，安藤聡，酒井正彦，坂部俊樹，草刈圭一朗，西田直樹，平成25年1月電子情報通信学会ソフトウェアサイエンス研究会</dd>
+  </dl>
+  </li>
+  <li class="ja">平成23年度電子情報通信学会ソフトウェアサイエンス研究会 研究奨励賞（2012/05/10）
+  <dl class="ja">
+    <dt>講演題目・著者・発表研究会</dt>
+    <dd>2リテラル監視法で実装されたSATソルバへの基本対称節処理機能の組み込み，日野善信，酒井正彦，坂部俊樹，草刈圭一朗，西田直樹，平成23年10月電子情報通信学会ソフトウェアサイエンス研究会</dd>
+    <dt>講演題目・著者・発表研究会</dt>
+    <dd>語問題を基底等式集合の語問題に帰着可能な等式集合のクラスについて，坂井利光，酒井正彦，坂部俊樹，西田直樹，草刈圭一朗，平成24年1月電子情報通信学会ソフトウェアサイエンス研究会</dd>
+  </dl>
+  </li>
+  <li class="ja">第67回（平成22年度）電子情報通信学会論文賞（2011/05/28）</li>
+  <li class="en">67th Best Paper Award of IEICE (May 28th, 2011)</li>
+  <li class="ja">平成14年度電気関係学会東海支部連合大会 奨励賞（2003/01/27）</li>
+</ul>
+
+<H2 class="ja">開発ツール</H2>
+<H2 class="en">Tools</H2>
+
+<ul>
+  <li><a href="https://www.trs.css.i.nagoya-u.ac.jp/repius/">Repius</a></li>
+  <li><a href="https://www.trs.css.i.nagoya-u.ac.jp/co3/">CO3</a></li>
+  <li><a href="https://www.trs.css.i.nagoya-u.ac.jp/crisys/">Crisys</a></li>
+  <li><a href="https://www.trs.css.i.nagoya-u.ac.jp/craris/">CRaris</a></li>
+</ul>
+
+<H2 class="ja">略歴</H2>
+<H2 class="en">Biography</H2>
+
+<H3 class="ja">学歴</H3>
+<H3 class="en">Educational Background</H3>
+
+<TABLE>
+<TR class="ja">
+  <TD class="ja">平成5年（1993年）4月</TD>
+  <TD class="ja">富山県立砺波高等学校 入学</TD>
+</TR>
+<TR class="ja">
+  <TD>平成8年（1996年）3月</TD>
+  <TD>富山県立砺波高等学校 卒業</TD>
+</TR>
+<TR class="ja">
+  <TD>平成8年（1996年）4月1日</TD>
+  <TD>名古屋大学工学部電気電子・情報工学科 入学</TD>
+</TR>
+<TR>
+  <TD class="ja">平成12年（2000年）3月27日</TD>
+  <TD class="ja">名古屋大学工学部電気電子・情報工学科 卒業</TD>
+  <TD class="en">March 27th, 2000</TD>
+  <TD class="en">BSc (Engineering), Department of Information Engineering, School of Engineering, Nagoya Univeristy</TD>
+</TR>
+<TR class="ja">
+  <TD>平成12年（2000年）4月1日</TD>
+  <TD>名古屋大学大学院工学研究科博士課程前期課程計算理工学専攻 入学</TD>
+</TR>
+<TR>
+  <TD class="ja">平成14年（2002年）3月25日</TD>
+  <TD class="ja">名古屋大学大学院工学研究科博士課程前期課程計算理工学専攻 修了</TD>
+  <TD class="en">March 25th, 2002</TD>
+  <TD class="en">MSc (Engineering), Department of Computational Science and Engineering, Graduate School of Engineering, Nagoya University</TD>
+</TR>
+<TR class="ja">
+  <TD>平成14年（2002年）4月1日</TD>
+  <TD>名古屋大学大学院工学研究科博士課程後期課程情報工学専攻 進学</TD>
+</TR>
+<TR>
+  <TD class="ja">平成16年（2004年）3月25日</TD>
+  <TD class="ja">名古屋大学大学院工学研究科博士課程後期課程情報工学専攻 短縮修了</TD>
+  <TD class="en">March 25th, 2004</TD>
+  <TD class="en">PhD (Engineering), Department of Information Engineering, Graduate School of Engineering, Nagoya Univeristy</TD>
+</TR>
+</TABLE>
+
+<H3 class="ja">職歴</H3>
+<H3 class="en">Academic Career</H3>
+
+<TABLE>
+<TR>
+  <TD class="ja">平成16年（2004年）4月1日〜平成19年（2007年）3月31日</TD>
+  <TD class="ja">名古屋大学大学院情報科学研究科情報システム学専攻 助手</TD>
+  <TD class="en">April 1st, 2004 - March 31st, 2007</TD>
+  <TD class="en">Research Associate, Department of Information Engineering, Graduate School of Information Science, Nagoya University</TD>
+</TR>
+<TR>
+  <TD class="ja">平成19年（2007年）4月1日〜平成25年（2013年）3月31日</TD>
+  <TD class="ja">名古屋大学大学院情報科学研究科情報システム学専攻 助教（職名変更）</TD>
+  <TD class="en">April 1st, 2007 - March 31st, 2013</TD>
+  <TD class="en">Assistant Professor, Department of Information Engineering, Graduate School of Information Science, Nagoya University (due to job title change)</TD>
+</TR>
+<TR>
+  <TD class="ja">平成22年（2010年）7月1日〜平成22年（2010年）12月26日</TD>
+  <TD class="ja">バレンシア工科大学客員研究員</TD>
+  <TD class="en">July 1st, 2010 - December 26th, 2010</TD>
+  <TD class="en">Visiting Researcher, DSIC, Technical University of Valencia</TD>
+</TR>
+<TR>
+  <TD class="ja">平成25年（2013年）4月1日〜平成29年（2017年）3月31日</TD>
+  <TD class="ja">名古屋大学大学院情報科学研究科情報システム学専攻 准教授</TD>
+  <TD class="en">April 1st, 2013 - March 31st, 2017</TD>
+  <TD class="en">Associate Professor, Department of Information Engineering, Graduate School of Information Science, Nagoya University</TD>
+</TR>
+<TR>
+  <TD class="ja">平成29年（2017年）4月1日〜令和7年（2025年）7月31日</TD>
+  <TD class="ja">名古屋大学大学院情報学研究科情報システム学専攻 准教授（組織改編）</TD>
+  <TD class="en">April 1st, 2017 - current</TD>
+  <TD class="en">Associate Professor, Department of Computing and Software Systems, Graduate School of Informatics, Nagoya University (due to organizational restructuring)</TD>
+</TR>
+<TR>
+  <TD class="ja">令和7年（2025年）8月1日〜現在</TD>
+  <TD class="ja">名古屋大学大学院情報学研究科情報システム学専攻 教授</TD>
+  <TD class="en">April 1st, 2017 - current</TD>
+  <TD class="en">Professor, Department of Computing and Software Systems, Graduate School of Informatics, Nagoya University</TD>
+</TR>
+</TABLE>
+
+<H2 class="ja">学会活動</H2>
+<H2 class="en">Society Activities</H2>
+
+<H3 class="ja">所属学会</H3>
+<H3 class="en">Affiliated Academic Societies</H3>
+
+<ul>
+  <li class="ja"><a href="https://www.jssst.or.jp">日本ソフトウェア科学会（JSSST）</a></li>
+  <li class="en"><a href="https://www.jssst.or.jp">Japan Sociery of Software Science and Technologies (JSSST)</a></li>
+  <li class="ja"><a href="https://www.ieice.org/jpn_r/index.html">電子情報通信学会（IEICE）</a></li>
+  <li class="en"><a href="https://www.ieice.org/eng_r/index.html">The Institute of Electronics, Information and Communication Engineers (IEICE)</a></li>
+  <li class="ja"><a href="https://www.ipsj.or.jp">情報処理学会（IPSJ）</a></li>
+  <li class="en"><a href="https://www.ipsj.or.jp/english/index.html"> Information Processing Society of Japan (IPSJ)</a></li>
+</ul>
+
+<H3 class="ja">編集委員</H3>
+<H3 class="en">Editorial Committee Members</H3>
+
+<ul>
+  <li class="ja">情報処理学会・論文誌プログラミング・編集委員長（2018年4月〜2020年3月）</li>
+  <li class="en">IPSJ Transaction on Programming, editor-in-chief (April 2018 - March 2020)</li>
+  <li class="ja">情報処理学会・論文誌プログラミング（2013年4月〜2017年3月，2020年4月〜2024年3月）</li>
+  <li class="en">IPSJ Transaction on Programming (April 2013 - March 2017, April 2020 - March 2024)</li>
+</ul>
+
+<H3 class="ja">プログラム委員</H3>
+<H3 class="en">Program Committee Members</H3>
+
+<ul>
+  <li><a href="https://iwc2025.github.io">IWC 2025</a> (PC co-chair)</li>
+  <li><a href="https://fscd2025.github.io">FSCD 2025</a></li>
+  <li><a href="https://www.google.com/search?client=safari&rls=en&q=padl+2025&ie=UTF-8&oe=UTF-8">PADL 2025</a></li>
+  <li class="ja"><a href="https://jssst-ppl.org/workshop/2025/">第27回プログラミングおよびプログラミング言語ワークショップ（PPL 2025）</a></li>
+  <li class="en"><a href="https://jssst-ppl.org/workshop/2025/">PPL 2025</a></li>
+  <li><a href="https://www.trs.css.i.nagoya-u.ac.jp/event/iwc2024/">IWC 2024</a> (PC co-chair)</li>
+  <li>FSCD 2024</li>
+  <li>CADE 2023</li>
+  <li class="ja">第25回プログラミングおよびプログラミング言語ワークショップ（PPL 2022）</li>
+  <li class="en">PPL 2022</li>
+  <li>LOPSTR 2022</li>
+  <li>IWC 2022</li>
+  <li>LOPSTR 2021</li>
+  <li>FSCD 2021</li>
+  <li>PPDP 2017</li>
+  <li>WPTE 2017</li>
+  <li>SCSS 2017</li>
+  <li>LOPSTR 2016</li>
+  <li>WPTE 2016</li>
+  <li>WPTE 2015 (PC co-chair)</li>
+  <li>LOPSTR 2014</li>
+  <li class="ja">第12回プログラミングおよびプログラミング言語ワークショップ（PPL 2010）</li>
+  <li class="en">PPL 2010</li>
+  <li>PEPM 2009</li>
+</ul>
+
+<H3 class="ja">舵取り委員</H3>
+<H3 class="en">Steering Committee Members</H3>
+
+<ul>
+  <li>IWC (September 2025 -)</li>
+  <li>Confluence Competition (CoCo) (September 2019 -)</li>
+  <li>WPTE (2015 -)</li>
+</ul>
+
+<H3 class="ja">その他</H3>
+<H3 class="en">Other Committee Members</H3>
+
+<ul>
+  <li class="ja">2023年度電子情報通信学会ソサイエティ大会   現地開催校委員 </li>
+  <li>IFIP WG 1.6: Rewriting, member (August 2022 - present) </li>
+  <li class="ja">情報処理学会プログラミング研究会・幹事（2020年4月〜2024年3月）</li>
+  <li class="ja">情報処理学会・代表員（2019年4月〜2021年3月）</li>
+  <li class="ja">2019年度LAシンポジウム事務局メンバー（2019年4月〜2020年3月）</li>
+  <li class="ja">第81回情報処理学会全国大会実行委員会・プログラム編成WG委員</li>
+  <li>CoCo 2018, organization committee member</li>
+  <li class="ja">電子情報通信学会ソフトウェアサイエンス研究専門委員会・専門委員（2018年6月〜2024年6月）</li>
+  <li class="ja">情報処理学会プログラミング研究会・コンピュータサイエンス領域委員会・委員（2018年4月〜2020年3月）</li>
+  <li class="ja">情報処理学会プログラミング研究会・主査（2018年4月〜2020年3月）</li>
+  <li class="en">IPSJ Special Interest Group on Programming, chief examiner (April 2018 - March 2020)</li>
+  <li>CoCo 2017, organization committee member</li>
+  <li>WPTE 2017, organization committee member</li>
+  <li class="ja">第79回情報処理学会全国大会実行委員会・実行委員</li>
+  <li>CoCo 2016, organization committee member</li>
+  <li>WPTE 2016, organization committee member</li>
+  <li class="ja">情報処理学会プログラミング研究会・運営委員（2014年4月〜2018年3月）</li>
+  <li class="ja">情報処理学会・代表員（2013年4月〜2014年3月）</li>
+  <li class="ja">平成24年度電気関係学会東海支部大会・実行委員</li>
+  <li class="ja">情報処理学会東海支部・幹事（2012年4月〜2014年5月）</li>
+  <li class="ja">2011年度LAシンポジウム事務局メンバー（2011年4月〜2012年3月）</li>
+  <li>RTA 2012, local organization member</li>
+  <li>IWC 2012, local representative</li>
+  <li class="ja">名報会・役員（2008年5月〜現在）</li>
+</ul>
+
+<!--
+<H2 class="ja">教育活動</H2>
+<H2 class="en">Teaching Activities</H2>
+
+<H3 class="ja">講義</H3>
+<H3 class="en">Lectures</H3>
+
+<H3 class="ja">セミナー</H3>
+<H3 class="en">Seminars</H3>
+
+<H3 class="ja">輪講（研究室）</H3>
+<H3 class="en">Reading Seminars (Local)</H3>
+
+-->
+
+<H2 class="ja">リンク</H2>
+<H2 class="en">Links</H2>
+
+<UL>
+  <LI class="ja"><A HREF="https://www.trs.css.i.nagoya-u.ac.jp">酒井・西田研究室</A></LI>
+  <LI class="en"><A HREF="https://www.trs.css.i.nagoya-u.ac.jp/index.html.en">Sakai-Nishida Laboratory</A></LI>
+
+  <LI class="ja"><A HREF="https://www.i.nagoya-u.ac.jp">情報学部・情報学研究科</A></LI>
+  <LI class="en"><A HREF="https://www.i.nagoya-u.ac.jp/en/">School &amp; Graduate School of Informatics</A></LI>
+
+  <LI class="ja"><A HREF="https://www.nagoya-u.ac.jp">名古屋大学</A></LI>
+  <LI class="en"><A HREF="https://en.nagoya-u.ac.jp">Nagoya University</A></LI>
+
+  <LI class="ja"><A HREF="https://www.thers.ac.jp">東海国立大学機構</A></LI>
+  <LI class="en"><A HREF="https://www.thers.ac.jp/en/index.html">Tokai National Higher Education and Research System</A></LI>
+
+</UL>
+
+</BODY>
+</HTML>
